@@ -17,7 +17,7 @@ Summarize the key requirements, acceptance criteria and testing scope.
 
 - Summary of the user story
 - List of acceptance criteria
-- Application URL and test credentials
+- Application URL
 - Key features to test
 
 ---
@@ -28,7 +28,7 @@ Summarize the key requirements, acceptance criteria and testing scope.
 
 Based on the user story signUp_feature that we just reviewed, use the playwright-test-planner agent to:
 
-1. Read the application URL and test credentials from the user story
+1. Read the application URL from the user story
 2. Explore the application and understand all workflows mentioned in the acceptance criteria
 3. Create a comprehensive test plan that covers all acceptance criteria including:
    - Happy path scenarios
@@ -50,6 +50,7 @@ Ensure each test scenario includes:
 
 - Complete test plan markdown file saved to specs/
 - Organized test scenarios with clear structure
+- Gherkin and BDD format
 - Browser exploration screenshots (if needed)
 
 ---
@@ -86,14 +87,14 @@ Then execute the test scenarios defined in that plan:
 
 ### Prompt:
 
-Now create automated test scripts using the playwright-test-generator agent.
+Create automated test scripts using the playwright-test-generator agent.
 
 Review:
 
 1. Test plan from: specs/bugbank-test-plan.md (for test scenarios and steps)
 2. Exploratory testing results from Step 3 (for actual element selectors and UI insights)
 
-Using insights from the manual exploratory testing:
+Using insights from the manual exploratory (Step 3) testing:
 
 - Leverage the element selectors and locators that were successfully used in Step 3
 - Use stable element properties (IDs, data attributes, roles) discovered during exploration
@@ -103,7 +104,7 @@ Using insights from the manual exploratory testing:
 Generate Playwright JavaScript automation scripts:
 
 1. Create scripts for each test scenario from the test plan
-2. Organize scripts into appropriate test suite files in: tests/bugbank/
+2. Organize scripts into appropriate test suite files in: tests/signUp-tests/
 3. Use the test case names and steps from the test plan
 4. Use reliable selectors and strategies from exploratory testing
 
@@ -112,7 +113,7 @@ Requirements for all scripts:
 - Follow Playwright best practices
 - Include proper assertions using expect()
 - Use descriptive test names matching the format in the test plan
-- Use robust element selectors discovered during manual testing
+- Use robust element selectors discovered during manual testing (Step 3)
 - Add comments for complex steps
 - Use proper wait strategies based on actual application behavior
 - Add proper test hooks (beforeEach, afterEach)
@@ -122,7 +123,7 @@ After generating the scripts, run the tests to verify they pass.
 
 ### Expected Output:
 
-- Test suite files created in tests/bugbank/ based on test plan scenarios
+- Test suite files created in tests/signUp-tests/ based on test plan scenarios
 - Scripts using robust selectors discovered during exploratory testing
 - All scripts follow Playwright best practices
 - Initial test generation complete
@@ -135,7 +136,7 @@ After generating the scripts, run the tests to verify they pass.
 
 Now execute the generated automation scripts and heal any failures using the playwright-test-healer agent.
 
-1. Run all automation scripts in: tests/bugbank/
+1. Run all automation scripts in: tests/signUp-tests/
 2. Identify any failing tests
 3. For each failing test, use the playwright-test-healer agent to:
    - Analyze the failure (selector issues, timing issues, assertion failures)
@@ -143,7 +144,7 @@ Now execute the generated automation scripts and heal any failures using the pla
    - Update the test script with the fixes
 4. Re-run the healed tests to verify they pass
 5. Repeat the heal process until all tests are stable and passing
-6. Document (Portuguese):
+6. Document (In Portuguese):
    - Initial test results (pass/fail count)
    - Healing activities performed
    - Final test results after healing
@@ -153,13 +154,13 @@ Now execute the generated automation scripts and heal any failures using the pla
 
 - All automation tests executed
 - Failing tests identified and healed using test-healer agent
-- Healed test scripts updated in tests/bugbank/
+- Healed test scripts updated in tests/signUp-tests/
 - Final stable test execution results
 - Summary of healing activities performed
 
 ---
 
-## 📊 STEP 6: Create Test Report (Portuguese)
+## 📊 STEP 6: Create Test Report (In Portuguese)
 
 ### Prompt:
 
@@ -171,7 +172,7 @@ Please compile results from:
 - Step 4: Generated automation scripts
 - Step 5: Automated test execution and healing results
 
-Structure the report as: test-results/bugbank-test-report.md
+Structure the report as: test-results/signUp-tests-report.md
 
 Include:
 
@@ -235,7 +236,7 @@ Git Repository URL: https://github.com/halisonvitorino/PlaywrightAutomatedFramew
 
 Please perform the following Git operations:
 
-1. Initialize Git repository if not already initialized
+1. Initialize Git repository (if not already initialized)
 2. Stage all files in the workspace (all new and modified files) if not already staged
 3. Create a commit with the message:
    "feat(tests): Add complete test suite for bugbank workflow
@@ -256,42 +257,3 @@ Please perform the following Git operations:
 - Descriptive commit message following conventional commit format
 - Confirmation of successful push to the provided repository
 - Summary of changes
-
-# Complete Workflow Execution
-
-**Single Combined Prompt (for Video Demo):**
-
-I want to demonstrate a complete end-to-end QA workflow using natural language and MCP servers.
-
-STEP 1 - READ USER STORY:
-First, read the user story from: user-stories/signUp_feature.md
-Provide a brief summary of what needs to be tested.
-
-STEP 2 - CREATE TEST PLAN:
-Use the playwright-test-planner agent to create a comprehensive test plan based on the user story.
-The agent should explore the application URL from the user story and cover all acceptance criteria.
-Save it as: specs/bugbank-test-plan.md
-
-STEP 3 - EXPLORATORY TESTING:
-Read the test plan from specs/bugbank-test-plan.md and use Playwright browser tools to manually execute each test scenario.
-Document findings with screenshots and note any issues discovered.
-
-STEP 4 - GENERATE AUTOMATION SCRIPTS:
-Review both the test plan (specs/bugbank-test-plan.md) and exploratory testing results from Step 3.
-Use the playwright-test-generator agent to create JavaScript automation scripts leveraging the element selectors and insights discovered during manual testing.
-Save scripts in tests/bugbank/.
-
-STEP 5 - EXECUTE AND HEAL TESTS:
-Run all automation scripts from tests/bugbank/.
-Use the playwright-test-healer agent to identify and auto-heal any failing tests.
-Re-run tests until all are stable and passing.
-Document healing activities.
-
-STEP 6 - CREATE TEST REPORT:
-Create a comprehensive test execution report at: test-results/bugbank/-test-report.md
-Compile results from Step 3 (manual testing), Step 4 (script generation), and Step 5 (execution and healing). Include PASS/FAIL status, healing summary, defects log, and test coverage analysis.
-
-STEP 7 - COMMIT TO GIT:
-Use the GitHub MCP agent to commit all new files with a descriptive message and push to the repository.
-
-Execute this complete workflow and provide status updates after each step.

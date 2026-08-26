@@ -4,7 +4,7 @@
 
 **Título:** Cadastro de Usuário
 **Como** um usuário sem cadastro no sistema,  
-**Eu quero** poder me cadastrar (com nome, e-mail, senha etc.) através da opção "Registrar",  
+**Eu quero** poder me Cadastrar (com nome, e-mail, senha etc.) através da opção Registrar,  
 **Para** obter acesso perante o sistema.
 
 ---
@@ -29,72 +29,73 @@ https://bugbank.netlify.app/
 
 Feature: Cadastro de Novo Usuário
 Como um usuário sem acesso ao sistema
-Eu quero poder me cadastrar através da opção "Registrar"
+Eu quero poder me Cadastrar através da opção Registrar via home page
 Para obter acesso ao sistema
 
 Background:
-Dado que o usuário está na tela inicial no sistema
-E acessa a opção "Registrar"
+Dado que o usuário está na página Cadastrar
+E clica no botão Registrar
 
 # CENÁRIO 1 - CAMINHO FELIZ
 
 Cenário: Cadastro com dados válidos
-Dado que o usuário está na página de cadastro
+Dado que o usuário está na página Cadastrar
 Quando preenche todos os campos obrigatórios com dados válidos:
-E clica no botão "Cadastrar"
+E clica no botão Cadastrar
 Então o sistema deve exibir a mensagem de sucesso
+E é redirecionado para home page
 
 # CENÁRIO 2 - CAMPOS OBRIGATÓRIOS VAZIOS
 
 Cenário: Submeter formulário com campos obrigatórios em branco
-Dado que o usuário está na página de cadastro
-Quando deixa todos os campos obrigatórios em branco
-E clica no botão "Cadastrar"
+Dado que o usuário está na página Cadastrar
+Quando deixa campos obrigatórios em branco
+E clica no botão Cadastrar
 Então o sistema não deve permitir a submissão
 E deve exibir mensagens de erro ao lado de cada campo vazio
 
 # CENÁRIO 3 - E-MAIL INVÁLIDO
 
 Cenário: Tentar atualizar com e-mail no formato incorreto
-Dado que o usuário está na página "Cadastrar"
+Dado que o usuário está na página Cadastrar
 Quando preenche todos os campos obrigatórios com dados válidos
-E preenche o campo "E-mail" sem @
-E clica no botão "Salvar"
+E preenche o campo E-mail sem @
+E clica no botão Cadastrar
 Então o sistema deve exibir a mensagem de erro
 E o formulário não deve ser enviado
 
 # CENÁRIO 4 - CAMPOS COM APENAS ESPAÇOS EM BRANCO
 
 Cenário: Preencher campos com espaços em branco
-Dado que o usuário está na página "Cadastrar"
-Quando preenche o campo "Nome" com " " (apenas espaços)
+Dado que o usuário está na página Cadastrar
+Quando preenche o campo Nome com (apenas espaços)
 E preenche os demais campos obrigatórios com dados válidos
-E clica no botão "Salvar"
+E clica no botão Cadastrar
 Então o sistema deve considerar o campo como vazio
-E deve exibir a mensagem de erro "O campo Nome é obrigatório"
+E deve exibir a mensagem de erro O campo Nome é obrigatório
 E o formulário não deve ser enviado
 
 # CENÁRIO 5 - CARACTERES ESPECIAIS NO NOME
 
 Cenário: Nome contendo caracteres especiais ou números
-Dado que o usuário está na página "Cadastrar"
-Quando preenche o campo "Nome" com "João123!"
+Dado que o usuário está na página Cadastrar
+Quando preenche o campo Nome com João123!
 E preenche os demais campos obrigatórios com dados válidos
-E clica no botão "Salvar"
+E clica no botão Cadastrar
 Então o sistema deve exibir a mensagem de erro
 E o formulário não deve ser enviado
 
 # CENÁRIO 6 - TAMANHO MÁXIMO EXCEDIDO
 
 Cenário: Exceder limite de caracteres em campo
-Dado que o usuário está na página "Cadastrar"
-Quando preenche o campo "Nome" com um texto de 300 caracteres
+Dado que o usuário está na página Cadastrar
+Quando preenche o campo Nome com um texto de 300 caracteres
 E preenche os demais campos obrigatórios com dados válidos
-E clica no botão "Salvar"
+E clica no botão Cadastrar
 Então o sistema deve exibir a mensagem de erro
 E o formulário não deve ser enviado
 
-# CRITÉRIOS DE ACEITE EM FORMATO BDD
+# CRITÉRIOS DE ACEITE
 
 Regra: Todos os campos são obrigatórios
 
