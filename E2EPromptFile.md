@@ -144,7 +144,8 @@ Now execute the generated automation scripts and heal any failures using the pla
    - Update the test script with the fixes
 4. Re-run the healed tests to verify they pass
 5. Repeat the heal process until all tests are stable and passing
-6. Document (In Portuguese):
+6. Delete all exploratory scripts
+7. Document (In Portuguese):
    - Initial test results (pass/fail count)
    - Healing activities performed
    - Final test results after healing
@@ -157,6 +158,7 @@ Now execute the generated automation scripts and heal any failures using the pla
 - Healed test scripts updated in tests/signUp-tests/
 - Final stable test execution results
 - Summary of healing activities performed
+- Deleted exploratory scripts (debug-test.js, empty-test.js, exploratory-test.js, etc.)
 
 ---
 
@@ -164,15 +166,13 @@ Now execute the generated automation scripts and heal any failures using the pla
 
 ### Prompt:
 
-Now create a comprehensive test execution report based on manual testing, automation execution, and healing activities.
+Now create a comprehensive test execution report based on manual testing, automation execution, and healing activities. Save the test report as: test-results/signUp-tests-report.md (Portuguese)
 
 Please compile results from:
 
 - Step 3: Manual exploratory testing results
 - Step 4: Generated automation scripts
 - Step 5: Automated test execution and healing results
-
-Structure the report as: test-results/signUp-tests-report.md
 
 Include:
 
@@ -249,7 +249,7 @@ Please perform the following Git operations:
    Resolves signUp_feature
 
 4. Push all changes to the Git repository
-5. Provide a summary of what was committed
+5. Provide a summary of what was committed and save as: test-results/summary-tests-report.md (Portuguese)
 
 ### Expected Output:
 
