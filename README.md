@@ -27,19 +27,27 @@ AI Tools - Run Your Coding Agent
 
 Claude Code:
 fcc-claude
+
 Codex:
 fcc-codex
+
 Pi:
 fcc-pi
+
 OpenCode:
 fcc-opencode
+
 Cline:
 fcc-cline
+
 Hermes:
 fcc-hermes
+
 DeepSeek Harness Web:
 fcc-dsh
+
 Grok Build:
 fcc-grok
+
 Muse Code:
 fcc-muse
