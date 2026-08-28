@@ -1,53 +1,51 @@
-Inside that directory, you can run several commands:
+# PlaywrightAutomatedFramework
 
-npx playwright test
-Runs the end-to-end tests.
+Suite de testes end-to-end para o fluxo de cadastro do BugBank, usando
+Playwright Test e Page Object Model.
 
-npx playwright test --ui
-Starts the interactive UI mode.
+## Requisitos
 
-npx playwright test --project=chromium
-Runs the tests only on Desktop Chrome.
+- Node.js LTS
+- Dependencias instaladas com `npm ci`
+- Navegadores Playwright instalados com `npx playwright install`
 
-npx playwright test example
-Runs the tests in a specific file.
+## Comandos
 
-npx playwright test --debug
-Runs the tests in debug mode.
+```bash
+npm ci
+npx playwright install
+npm test
+npm run test:list
+npm run report
+```
 
-npx playwright codegen
-Auto generate tests with Codegen.
+Para abrir o navegador durante a depuracao:
 
-We suggest that you begin by typing:
-npx playwright test
+```bash
+HEADED=true npm test
+```
 
-First run prompt "Perform end to end QA workflow and MCP i have defined in current prompt file E2EPromptFile.md . Perform the QA work flow step by step defined in this prompt file."
+Para executar contra outro ambiente, informe a URL sem alterar os testes:
 
-AI Tools - Run Your Coding Agent
+```bash
+BASE_URL=https://bugbank.netlify.app npm test
+```
 
-Claude Code:
-fcc-claude
+## Estrutura
 
-Codex:
-fcc-codex
+```text
+src/
+  pages/       Page Objects e locators
+  tests/       Casos automatizados
+  utils/       Dados e acoes reutilizaveis
+```
 
-Pi:
-fcc-pi
+O `playwright.config.js` centraliza a URL base, artefatos de execucao,
+reporters, retries de CI e o projeto Chromium.
 
-OpenCode:
-fcc-opencode
+## Observacao sobre os testes
 
-Cline:
-fcc-cline
-
-Hermes:
-fcc-hermes
-
-DeepSeek Harness Web:
-fcc-dsh
-
-Grok Build:
-fcc-grok
-
-Muse Code:
-fcc-muse
+Os casos CT-004 a CT-006 registram comportamentos atualmente aceitos pela
+aplicacao, embora contrariem os criterios de validacao da historia. Eles
+devem ser convertidos em expectativas de erro quando as validacoes do produto
+forem corrigidas.
