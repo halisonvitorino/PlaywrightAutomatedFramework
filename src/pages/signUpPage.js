@@ -56,7 +56,7 @@ class SignUpPage {
   }
 
   get emailFormatError() {
-    return this.form.getByText("Formato inválido");
+    return this.form.getByText("Formato inválidos");
   }
 
   get nameError() {

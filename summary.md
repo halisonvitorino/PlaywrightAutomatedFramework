@@ -9,16 +9,11 @@ Step Action Outcome
 
 1.  Read User Story Reviewed user‑stories/ Summarized requirements,
     signUp_feature.md acceptance criteria, and the
-    application URL (https://
-    bugbank.netlify.app/).
+    application URL (https://bugbank.netlify.app/).
     ───────────────────────────── ────────────────────────────── ──────────────────────────────
-2.  Create Test Plan The test plan already
-    existed at specs/
+2.  Create Test Plan The test plan already existed at specs/
     bugbank‑test‑plan.md.
-    Verified it covers all
-    acceptance criteria with
-    Gherkin‑style test cases
-    (CT‑001 … CT‑030).
+    Verified it covers all acceptance criteria with Gherkin‑style test cases (CT‑001 … CT‑030).
     ───────────────────────────── ────────────────────────────── ──────────────────────────────
 3.  Perform Exploratory Used Playwright (headed
     Testing mode) to interact with the
@@ -47,14 +42,11 @@ Step Action Outcome
     observed (including the
     bugs).
     ───────────────────────────── ────────────────────────────── ──────────────────────────────
-5.  Execute & Heal Ran the test suite, analyzed
-    Automation failures, and healed the
-    tests: <br>• Updated
-    success‑message locator to
-    regex /A conta.\*foi criada
-    com sucesso/i. <br>• Changed
-    CT‑003 to expect 3
-    occurrences of “É campo
+
+5.  Execute & Heal Ran the test suite, analyzed Automation failures, and healed the
+    tests: <br>• Updated success‑message locator to
+    regex /A conta.\*foi criada com sucesso/i. <br>• Changed
+    CT‑003 to expect 3 occurrences of “É campo
     obrigatório” (email, senha,
     confirmação). <br>• Updated
     error‑message locators for
@@ -105,7 +97,6 @@ Step Action Outcome
 - test-results/signUp-tests-report.md – detailed test report (PT‑BR)
 - Various exploratory scripts (debug-test.js, empty-test.js, etc.) and screenshots in test-
   results\*
-
 - Local Git commit (5e45129) with 21 files changed
 
 ———
